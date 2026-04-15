@@ -1,93 +1,83 @@
-import Link from "next/link";
-import { PageShell } from "@/components/shared/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { mockTeamMembers } from "@/data/mock-data";
-import { SITE_CONFIG } from "@/lib/site-config";
+import Link from 'next/link'
+import { Sparkles, Target, Users } from 'lucide-react'
+import { Footer } from '@/components/shared/footer'
+import { NavbarShell } from '@/components/shared/navbar-shell'
+import { SITE_CONFIG } from '@/lib/site-config'
 
-const highlights = [
-  { label: "Creators onboarded", value: "12k+" },
-  { label: "Bookmarks shared", value: "180k" },
-  { label: "Listings published", value: "8.6k" },
-];
-
-const values = [
-  { title: "Curated by people", description: "We believe trusted recommendations beat endless feeds." },
-  { title: "Designed for focus", description: "Clear, calm UI helps you find the next best resource fast." },
-  { title: "Built to share", description: "Collections make collaboration and knowledge flow effortless." },
-];
+const principles = [
+  {
+    title: 'Visual-first discovery',
+    body: 'People should be able to scan quality ideas quickly without forcing everything into a dense directory table.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Human identity first',
+    body: 'Creators and businesses need room for personality, trust cues, and social presence alongside their work.',
+    icon: Users,
+  },
+  {
+    title: 'Practical outcomes',
+    body: 'Every section is designed to help users discover, save, and act instead of just scrolling.',
+    icon: Target,
+  },
+]
 
 export default function AboutPage() {
   return (
-    <PageShell
-      title={`About ${SITE_CONFIG.name}`}
-      description={`${SITE_CONFIG.name} is a modern platform for creators, communities, and curated business discovery.`}
-      actions={
-        <>
-          <Button variant="outline" asChild>
-            <Link href="/team">Meet the Team</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/contact">Contact Us</Link>
-          </Button>
-        </>
-      }
-    >
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border-border bg-card">
-          <CardContent className="space-y-4 p-6">
-            <Badge variant="secondary">Our Story</Badge>
-            <h2 className="text-2xl font-semibold text-foreground">
-              A single home for knowledge, discovery, and community.
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              {SITE_CONFIG.name} brings together publishing, listings, and social bookmarking so teams can move faster
-              and keep their best resources close.
+    <div className="tabs-shell min-h-screen text-[#34143f]">
+      <NavbarShell />
+      <main className="w-full px-4 py-10 sm:px-6 lg:px-8">
+        <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="tabs-panel-strong rounded-[2.2rem] p-7 sm:p-9">
+            <span className="tabs-badge">About {SITE_CONFIG.name}</span>
+            <h1 className="mt-5 text-4xl font-semibold tracking-[-0.06em] text-[#41144b] sm:text-5xl">
+              A modern social canvas for visuals, profiles, and high-intent discovery.
+            </h1>
+            <p className="mt-5 max-w-3xl text-sm leading-8 text-[#704969]">
+              {SITE_CONFIG.name} combines image sharing, profile surfaces, and utility lanes in one consistent product system.
+              The goal is simple: keep creation expressive while making discovery cleaner and more useful.
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {highlights.map((item) => (
-                <div key={item.label} className="rounded-lg border border-border bg-secondary/40 p-4">
-                  <div className="text-2xl font-semibold text-foreground">{item.value}</div>
-                  <div className="text-xs text-muted-foreground">{item.label}</div>
-                </div>
-              ))}
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/contact" className="tabs-button">Contact team</Link>
+              <Link href="/help" className="tabs-button-soft">Open help center</Link>
             </div>
-          </CardContent>
-        </Card>
-        <div className="space-y-4">
-          {values.map((value) => (
-            <Card key={value.title} className="border-border bg-card">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-foreground">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="tabs-panel rounded-[1.8rem] p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ca5995]">People reached</p>
+              <p className="mt-3 text-3xl font-semibold text-[#41144b]">120k+</p>
+              <p className="mt-2 text-sm text-[#704969]">Monthly visits across visual and profile routes.</p>
+            </div>
+            <div className="tabs-panel rounded-[1.8rem] p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Posts organized</p>
+              <p className="mt-3 text-3xl font-semibold text-[#41144b]">1.8M+</p>
+              <p className="mt-2 text-sm text-[#704969]">Cards, collections, and lane-specific metadata.</p>
+            </div>
+            <div className="tabs-panel rounded-[1.8rem] p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Response speed</p>
+              <p className="mt-3 text-3xl font-semibold text-[#41144b]">&lt; 24h</p>
+              <p className="mt-2 text-sm text-[#704969]">Average support turnaround for active creators.</p>
+            </div>
+          </div>
+        </section>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {mockTeamMembers.map((member) => (
-          <Card key={member.id} className="border-border bg-card transition-transform hover:-translate-y-1">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <Avatar className="h-12 w-12">
-                  <AvatarImage src={member.avatar} alt={member.name} />
-                  <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{member.name}</p>
-                  <p className="text-xs text-muted-foreground">{member.role}</p>
-                </div>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">{member.bio}</p>
-              <p className="mt-3 text-xs text-muted-foreground">{member.location}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </PageShell>
-  );
+        <section className="mt-8 grid gap-4 md:grid-cols-3">
+          {principles.map((item) => {
+            const Icon = item.icon
+            return (
+              <article key={item.title} className="tabs-panel rounded-[1.8rem] p-6">
+                <span className="tabs-badge">
+                  <Icon className="h-3.5 w-3.5" />
+                  Principle
+                </span>
+                <h2 className="mt-4 text-xl font-semibold text-[#41144b]">{item.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#704969]">{item.body}</p>
+              </article>
+            )
+          })}
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
 }
