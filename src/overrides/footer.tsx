@@ -29,12 +29,12 @@ export function FooterOverride() {
         </div>
 
         <div className="tabs-panel rounded-[2rem] p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Supporting routes</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Support and policy</p>
           <div className="mt-4 grid grid-cols-2 gap-3 text-sm font-semibold text-[#41144b]">
-            <Link href="/sbm" className="hover:text-[#ca5995]">Saved</Link>
-            <Link href="/listings" className="hover:text-[#ca5995]">Listings</Link>
-            <Link href="/classifieds" className="hover:text-[#ca5995]">Classifieds</Link>
-            <Link href="/pdf" className="hover:text-[#ca5995]">PDF</Link>
+            <Link href="/about" className="hover:text-[#ca5995]">About</Link>
+            <Link href="/terms" className="hover:text-[#ca5995]">Terms</Link>
+            <Link href="/privacy" className="hover:text-[#ca5995]">Policy</Link>
+            <Link href="/help" className="hover:text-[#ca5995]">Help</Link>
             <Link href="/contact" className="hover:text-[#ca5995]">Contact</Link>
             <Link href="/register" className="hover:text-[#ca5995]">Register</Link>
           </div>

@@ -48,7 +48,7 @@ export async function TaskListPageOverride({ task, category }: { task: TaskKey; 
   return (
     <div className="tabs-shell min-h-screen text-[#34143f]">
       <NavbarShell />
-      <main className="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8">
+      <main className="w-full px-4 py-10 sm:px-6 lg:px-8">
         <section className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div className="tabs-panel-strong rounded-[2.3rem] p-6 sm:p-8">
             <div className="tabs-badge">
