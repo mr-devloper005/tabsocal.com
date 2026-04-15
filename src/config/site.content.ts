@@ -2,110 +2,110 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent reading platform',
+    tagline: 'Creative boards and standout profiles',
   },
   footer: {
-    tagline: 'Stories, resources, and discoverable posts',
+    tagline: 'Images, creators, collections, and visual discovery',
   },
   hero: {
-    badge: 'Latest stories and visuals',
-    title: ['A thoughtful home for', 'stories, visuals, and discovery.'],
+    badge: 'Image-first social canvas',
+    title: ['A vibrant home for', 'visual drops and creator profiles.'],
     description:
-      'Explore fresh articles, image-led posts, and discoverable content across the platform through a calmer and clearer browsing experience.',
+      'Explore image-led posts, creative identities, and supporting content through a playful visual system built to help memorable work get noticed.',
     primaryCta: {
-      label: 'Read latest stories',
-      href: '/articles',
-    },
-    secondaryCta: {
-      label: 'Explore visuals',
+      label: 'Open image feed',
       href: '/image-sharing',
     },
-    searchPlaceholder: 'Search stories, visuals, listings, and more',
-    focusLabel: 'Focus',
-    featureCardBadge: 'latest cover rotation',
-    featureCardTitle: 'Latest posts shape the visual identity of the homepage.',
+    secondaryCta: {
+      label: 'Meet creators',
+      href: '/profile',
+    },
+    searchPlaceholder: 'Search images, creators, boards, and saved finds',
+    focusLabel: 'Spotlight',
+    featureCardBadge: 'live board highlights',
+    featureCardTitle: 'Fresh posts shape the rhythm of the homepage in real time.',
     featureCardDescription:
-      'Recent images and stories stay at the center of the experience without changing any core platform behavior.',
+      'The feed stays image-heavy while profile, article, and resource routes remain live in supporting layers.',
   },
   home: {
     metadata: {
-      title: 'Stories, visuals, and discoverable content',
+      title: 'Images, creators, and visual discovery',
       description:
-        'Explore articles, images, listings, and curated posts through a cleaner reading-first experience.',
-      openGraphTitle: 'Stories, visuals, and discoverable content',
+        'Browse image-led posts, creator profiles, and supporting content through a bright, playful discovery experience.',
+      openGraphTitle: 'Images, creators, and visual discovery',
       openGraphDescription:
-        'Discover articles, visual posts, and connected content through a calmer reading-first experience.',
-      keywords: ['story platform', 'article site', 'visual content', 'content discovery'],
+        'Discover images, profiles, and connected content through a bold gallery-first interface.',
+      keywords: ['image sharing', 'creator profiles', 'visual discovery', 'gallery platform'],
     },
-    introBadge: 'About the platform',
-    introTitle: 'Built for reading, browsing, and connecting different kinds of content.',
+    introBadge: 'Why it works',
+    introTitle: 'Built for images to travel farther and profiles to feel more alive.',
     introParagraphs: [
-      'This site brings together article-style reading, visual browsing, and structured discovery so visitors can move naturally between different content types.',
-      'Instead of separating stories, visuals, and supporting resources into disconnected surfaces, the platform keeps them connected in one place with consistent navigation and easier exploration.',
-      'Whether someone starts with a story, an image-led post, a listing, or a resource page, they can keep discovering related content without friction.',
+      'The homepage behaves like a creative board instead of a generic landing page, so visitors meet the images first and the supporting context second.',
+      'Profiles work like identity anchors for the visual feed, helping people move from standout work into the creator, studio, or personality behind it.',
+      'Other tasks stay active beneath the same logic, but the interface makes it clear that this product lives around images and the people who publish them.',
     ],
-    sideBadge: 'At a glance',
+    sideBadge: 'What changes',
     sidePoints: [
-      'Reading-first homepage with stronger emphasis on stories and imagery.',
-      'Connected sections for articles, visuals, listings, and supporting resources.',
-      'Cleaner browsing rhythm designed to make exploration feel easier.',
-      'Lightweight interactions that keep the experience fast and readable.',
+      'Image boards lead the first scroll instead of text-heavy hero blocks.',
+      'Creator profiles feel playful, editorial, and social instead of business-like.',
+      'Supporting routes stay accessible without hijacking the main visual rhythm.',
+      'Cards, spacing, and motion are tuned for browsing many images quickly.',
     ],
     primaryLink: {
-      label: 'Browse articles',
-      href: '/articles',
+      label: 'Browse images',
+      href: '/image-sharing',
     },
     secondaryLink: {
-      label: 'See visuals',
-      href: '/image-sharing',
+      label: 'Browse profiles',
+      href: '/profile',
     },
   },
   cta: {
-    badge: 'Start exploring',
-    title: 'Explore articles, visuals, and resources through one connected experience.',
+    badge: 'Start sharing',
+    title: 'Bring your visuals, style, and public identity into one brighter social canvas.',
     description:
-      'Move between articles, image-led posts, listings, and resources through one clearer and more connected visual system.',
+      'Publish images, build a memorable profile, and keep supporting content available without flattening everything into the same template.',
     primaryCta: {
-      label: 'Get Started Free',
+      label: 'Create profile',
       href: '/register',
     },
     secondaryCta: {
-      label: 'Contact Sales',
+      label: 'Talk to us',
       href: '/contact',
     },
   },
   taskSectionHeading: 'Latest {label}',
-  taskSectionDescriptionSuffix: 'Browse the newest posts in this section.',
+  taskSectionDescriptionSuffix: 'Browse the newest posts in this lane.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
   article: {
-    title: 'Articles and stories',
-    description: 'Read articles, stories, guides, and long-form posts across topics and interests.',
+    title: 'Stories, notes, and supporting reads',
+    description: 'Read stories, commentary, and supporting editorial content that sits behind the visual feed.',
   },
   listing: {
-    title: 'Listings and discoverable pages',
-    description: 'Explore listings, services, brands, and structured pages organized for easier browsing.',
+    title: 'Listings and studio links',
+    description: 'Explore listings, directories, and structured pages connected to creators and visual projects.',
   },
   classified: {
-    title: 'Classifieds and announcements',
-    description: 'Browse classifieds, offers, notices, and time-sensitive posts across categories.',
+    title: 'Announcements and quick drops',
+    description: 'Browse offers, notices, and timely posts in a faster, more compact discovery format.',
   },
   image: {
-    title: 'Image sharing and visual posts',
-    description: 'Explore image-led posts, galleries, and visual stories from across the platform.',
+    title: 'Image sharing and visual drops',
+    description: 'Explore galleries, image-led posts, and high-visibility visuals designed for fast browsing.',
   },
   profile: {
-    title: 'Profiles and public pages',
-    description: 'Discover public profiles, brand pages, and identity-focused posts in one place.',
+    title: 'Profiles and creative identities',
+    description: 'Discover creator profiles, public identities, and personality-rich pages behind the visuals.',
   },
   sbm: {
-    title: 'Curated links and saved resources',
-    description: 'Browse useful links, saved references, and curated resources organized for discovery.',
+    title: 'Curated links and saved boards',
+    description: 'Browse saved links, references, and curated resources that support creative discovery.',
   },
   pdf: {
-    title: 'PDFs and downloadable resources',
-    description: 'Open reports, documents, and downloadable resources shared across the platform.',
+    title: 'PDFs and downloadable kits',
+    description: 'Open documents, briefs, and downloadable resources connected to the visual ecosystem.',
   },
 }
 
@@ -114,11 +114,11 @@ export const taskIntroCopy: Record<
   { title: string; paragraphs: string[]; links: { label: string; href: string }[] }
 > = {
   listing: {
-    title: 'Listings, services, and structured pages',
+    title: 'Listings, shops, and structured pages',
     paragraphs: [
-      'Explore listings, services, brands, and discoverable pages across categories. Each entry is organized to make browsing clearer and help visitors quickly understand what a post offers.',
-      'Listings connect naturally with articles, images, resources, and other content types so supporting information stays easy to reach from the same platform.',
-      'Browse by category to compare posts in context, discover related content, and move between formats without losing your place.',
+      'Explore structured pages, shop links, and service-style posts that sit behind the creative work on the site.',
+      'Listings stay available for practical browsing, but they are framed as supporting surfaces around the main image-and-profile identity.',
+      'Use category filters to move between practical resources without losing access to the core visual feed.',
     ],
     links: [
       { label: 'Read articles', href: '/articles' },
@@ -127,11 +127,11 @@ export const taskIntroCopy: Record<
     ],
   },
   article: {
-    title: 'Articles, stories, and long-form reading',
+    title: 'Articles, stories, and context',
     paragraphs: [
-      'This section is built for stories, explainers, guides, and long-form reading across topics and interests.',
-      'Articles connect with listings, images, resources, and other content types so deeper reading can lead naturally into related discovery.',
-      'Use this section to browse thoughtful posts, revisit useful writing, and move into supporting content when you want more context.',
+      'This section gives extra context to the visual feed through stories, explainers, interviews, and longer notes.',
+      'Articles remain fully functional, but the page design deliberately separates them from the image-heavy rhythm used elsewhere.',
+      'Use this section when you want deeper reading behind creators, drops, and saved references.',
     ],
     links: [
       { label: 'Explore listings', href: '/listings' },
@@ -140,11 +140,11 @@ export const taskIntroCopy: Record<
     ],
   },
   classified: {
-    title: 'Classifieds, offers, and timely updates',
+    title: 'Classifieds, offers, and quick updates',
     paragraphs: [
-      'Classified posts help surface offers, notices, deals, and time-sensitive opportunities in a faster-scanning format.',
-      'They work well alongside articles, listings, and profiles, making it easier to connect short-term posts with more structured content.',
-      'Browse by category to find announcements quickly, then continue into related sections when you need more detail.',
+      'This lane surfaces short-term offers, requests, and announcements in a compact, scan-first format.',
+      'It stays connected to the broader system while keeping the pacing quicker and more alert than the image and profile pages.',
+      'Use it for fast-moving posts, then jump into related profiles or stories when you want more context.',
     ],
     links: [
       { label: 'Business listings', href: '/listings' },
@@ -155,9 +155,9 @@ export const taskIntroCopy: Record<
   image: {
     title: 'Image-led posts and visual stories',
     paragraphs: [
-      'Image sharing highlights visual posts, galleries, and story-led content where imagery plays the lead role.',
-      'These posts connect with articles, listings, and other sections so visuals can act as entry points into deeper content.',
-      'Browse the latest visual updates, then continue into related stories or supporting pages for more context.',
+      'Image sharing is the lead surface of the product, so the page is tuned for faster scanning, taller cards, and stronger visual hierarchy.',
+      'These posts act as the main discovery engine and connect naturally to profiles, saved boards, articles, and supporting resources.',
+      'Browse recent visuals, open a single post, then continue into the person or context behind it.',
     ],
     links: [
       { label: 'Read articles', href: '/articles' },
@@ -168,9 +168,9 @@ export const taskIntroCopy: Record<
   profile: {
     title: 'Profiles, identities, and public pages',
     paragraphs: [
-      'Profiles capture the identity behind a business, creator, brand, or project and help visitors understand who is behind the content they are exploring.',
-      'These pages work as trust anchors across the site and connect naturally with stories, listings, documents, and other post types.',
-      'Browse profiles to understand people and brands more clearly, then continue into related content from the same source.',
+      'Profiles show the face, taste, and public identity behind the work that appears in the image feed.',
+      'They function as identity anchors for creators, studios, brands, and public-facing personas without flattening them into business cards.',
+      'Use profile pages to move from image discovery into the person, voice, or brand behind the post.',
     ],
     links: [
       { label: 'Open listings', href: '/listings' },
@@ -181,9 +181,9 @@ export const taskIntroCopy: Record<
   sbm: {
     title: 'Curated links and bookmarked resources',
     paragraphs: [
-      'This section collects useful links, references, tools, and saved resources in a text-first browsing format.',
-      'Bookmarks stay connected to the rest of the platform, making it easier to move from a saved link into related stories, listings, or resources.',
-      'Use this section to organize helpful sources and discover connected content without leaving the broader site experience.',
+      'This section collects saved links, references, mood-board resources, and support material around the visual feed.',
+      'Bookmarks stay live in the system, but their UI is calmer and denser than the image and profile surfaces.',
+      'Use this lane to move from inspiration into reference material without leaving the broader product.',
     ],
     links: [
       { label: 'Browse articles', href: '/articles' },
@@ -194,9 +194,9 @@ export const taskIntroCopy: Record<
   pdf: {
     title: 'PDFs, documents, and downloadable files',
     paragraphs: [
-      'The PDF library hosts reports, guides, downloadable files, and longer-form document resources that support reading and discovery.',
-      'These resources work alongside stories, listings, and profiles, helping document-style content stay connected to the rest of the platform.',
-      'Browse by category to find relevant files quickly, then continue into related sections when you want more context.',
+      'The PDF library supports downloadable kits, decks, briefs, and documents that orbit the creator and image experience.',
+      'These documents stay available without borrowing the same visual rhythm used by the more image-heavy parts of the product.',
+      'Use this section for practical files, then jump back into profiles, boards, or articles when you need context.',
     ],
     links: [
       { label: 'Read articles', href: '/articles' },
