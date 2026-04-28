@@ -34,6 +34,11 @@ export function TaskListClient({ task, initialPosts, category }: Props) {
     });
 
     const normalizedCategory = category ? normalizeCategory(category) : "all";
+    console.log("[Filter Debug] category prop:", category);
+    console.log("[Filter Debug] normalizedCategory:", normalizedCategory);
+    console.log("[Filter Debug] total posts:", combined.length);
+    console.log("[Filter Debug] posts with category:", combined.map(p => ({ title: p.title, cat: (p.content as any)?.category })));
+
     if (normalizedCategory === "all") {
       return combined.filter((post) => {
         const content = post.content && typeof post.content === "object" ? post.content : {};
@@ -42,14 +47,19 @@ export function TaskListClient({ task, initialPosts, category }: Props) {
       });
     }
 
-    return combined.filter((post) => {
+    const filtered = combined.filter((post) => {
       const content = post.content && typeof post.content === "object" ? post.content : {};
+      const rawValue = (content as any).category;
       const value =
-        typeof (content as any).category === "string"
-          ? normalizeCategory((content as any).category)
+        typeof rawValue === "string"
+          ? normalizeCategory(rawValue)
           : "";
-      return value === normalizedCategory;
+      const matches = value === normalizedCategory;
+      console.log(`[Filter Debug] post: ${post.title}, rawCategory: ${rawValue}, normalized: ${value}, matches: ${matches}`);
+      return matches;
     });
+    console.log("[Filter Debug] filtered result count:", filtered.length);
+    return filtered;
   }, [category, initialPosts, localPosts]);
 
   if (!merged.length) {
