@@ -1,5 +1,6 @@
 import type { TaskKey } from '@/lib/site-config'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { Compass, Image as ImageIcon, LayoutGrid, Search, Sparkles, UserRound } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
@@ -32,9 +33,22 @@ const introMap: Record<string, { badge: string; title: string; body: string; chi
 }
 
 export async function TaskListPageOverride({ task, category }: { task: TaskKey; category?: string }) {
+  console.log('[Server Debug] TaskListPageOverride received category:', category)
   const taskConfig = getTaskConfig(task)
   const posts = await fetchTaskPosts(task, 30)
   const normalizedCategory = category ? normalizeCategory(category) : 'all'
+  console.log('[Server Debug] normalizedCategory:', normalizedCategory)
+
+  async function applyFilter(formData: FormData) {
+    'use server'
+    const selectedCategory = formData.get('category') as string
+    const route = getTaskConfig(task)?.route || '/'
+    if (selectedCategory && selectedCategory !== 'all') {
+      redirect(`${route}?category=${encodeURIComponent(selectedCategory)}`)
+    } else {
+      redirect(route)
+    }
+  }
   const intro = introMap[task] || {
     badge: 'Support lane',
     title: `${taskConfig?.label || task} in a lighter support surface.`,
@@ -81,7 +95,7 @@ export async function TaskListPageOverride({ task, category }: { task: TaskKey; 
             </div>
             <div className="tabs-panel rounded-[1.8rem] p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Filter</p>
-              <form action={taskConfig?.route || '#'} className="mt-3 grid gap-3">
+              <form action={applyFilter} key={`filter-${normalizedCategory}`} className="mt-3 grid gap-3">
                 <select name="category" defaultValue={normalizedCategory} className="h-11 rounded-xl border border-[rgba(93,28,106,0.1)] bg-white/85 px-3 text-sm text-[#41144b]">
                   <option value="all">All categories</option>
                   {CATEGORY_OPTIONS.map((item) => (

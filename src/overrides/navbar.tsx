@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, Plus, Search, UserRound, X } from 'lucide-react'
+import { Menu, Plus, Search, X } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { useAuth } from '@/lib/auth-context'
 
@@ -23,7 +23,6 @@ export function NavbarOverride() {
   const primaryLinks = useMemo(
     () => [
       { label: 'Images', href: '/image-sharing' },
-      { label: 'Profiles', href: '/profile' },
     ],
     [],
   )
@@ -118,10 +117,6 @@ export function NavbarOverride() {
           <div className="mt-4 flex gap-2">
             <Link href="/create/image" className="tabs-button flex-1">
               Create pin
-            </Link>
-            <Link href="/profile" className="tabs-button-soft flex-1 justify-center">
-              <UserRound className="h-4 w-4" />
-              Profiles
             </Link>
           </div>
           <div className="mt-3 flex flex-wrap gap-2">

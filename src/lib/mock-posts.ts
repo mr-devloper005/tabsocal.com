@@ -88,16 +88,16 @@ const taskTitles: Record<TaskKey, string[]> = {
 };
 
 const taskCategories: Record<TaskKey, string[]> = {
-  listing: ["Marketing", "Tech", "Design", "Fitness", "Automotive"],
-  classified: ["Jobs", "Real Estate", "Services", "Gigs", "Market"],
-  article: ["Strategy", "SEO", "Product", "Growth", "Ops"],
-  image: ["Lifestyle", "Travel", "Studio", "Urban", "Minimal"],
-  profile: ["Founder", "Creator", "Agency", "Team", "Consultant"],
-  social: ["Community", "News", "Updates", "Events", "Insights"],
-  pdf: ["Guides", "Playbooks", "Templates", "Reports", "Docs"],
-  org: ["Agency", "Studio", "Collective", "Partner", "Network"],
-  sbm: ["Bookmarks", "Tools", "Resources", "SEO", "Research"],
-  comment: ["Opinion", "Reply", "Discussion", "Feedback", "Debate"],
+  listing: ["Business", "Technology", "Automotive", "Health", "Home Improvement"],
+  classified: ["Jobs & Payroll", "Real Estate", "Services", "Shopping", "Travel"],
+  article: ["Business", "Technology", "SEO", "Marketing", "News"],
+  image: ["Lifestyle", "Travel", "Photography", "Real Estate", "Food"],
+  profile: ["Business", "Creator", "Agency", "Team", "Consultant"],
+  social: ["Community", "News", "Social Media", "Events", "Entertainment"],
+  pdf: ["Education", "Business", "Technology", "Finance", "Marketing"],
+  org: ["Business", "Agency", "Collective", "Partner", "Network"],
+  sbm: ["Technology", "Business", "SEO", "Research", "Education"],
+  comment: ["Opinion", "News", "Discussion", "Entertainment", "Debate"],
 };
 
 const summaryByTask: Record<TaskKey, string> = {
