@@ -9,9 +9,9 @@ interface AuthContextType {
   user: User | null
   isAuthenticated: boolean
   isLoading: boolean
-  login: (email: string, password: string) => Promise<void>
+  login: (email: string, password: string) => Promise<boolean>
   logout: () => void
-  signup: (name: string, email: string, password: string) => Promise<void>
+  signup: (name: string, email: string, password: string) => Promise<boolean>
   updateUser: (updates: Partial<User>) => void
 }
 
@@ -48,20 +48,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true)
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     // Mock login - in production this would validate credentials
-    if (email && password) {
+    const normalizedEmail = email.trim().toLowerCase()
+    if (normalizedEmail && password) {
       const storedUser = loadFromStorage<User | null>(storageKeys.user, null)
-      const nextUser = storedUser?.email === email
+      const nextUser = storedUser?.email === normalizedEmail
         ? storedUser
         : buildUser({
-            email,
-            name: email.split('@')[0]?.replace(/[^a-zA-Z0-9]/g, '') || currentUser.name,
+            email: normalizedEmail,
+            name: normalizedEmail.split('@')[0]?.replace(/[^a-zA-Z0-9]/g, '') || currentUser.name,
           })
       setUser(nextUser)
       saveToStorage(storageKeys.user, nextUser)
+      setIsLoading(false)
+      return true
     }
     setIsLoading(false)
+    return false
   }, [buildUser])
 
   const logout = useCallback(() => {
@@ -75,17 +79,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true)
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
     // Mock signup
-    if (name && email && password) {
+    const normalizedEmail = email.trim().toLowerCase()
+    if (name && normalizedEmail && password) {
       const nextUser = buildUser({
         name,
-        email,
+        email: normalizedEmail,
       })
       setUser(nextUser)
       saveToStorage(storageKeys.user, nextUser)
+      setIsLoading(false)
+      return true
     }
     setIsLoading(false)
+    return false
   }, [buildUser])
 
   const updateUser = useCallback((updates: Partial<User>) => {
