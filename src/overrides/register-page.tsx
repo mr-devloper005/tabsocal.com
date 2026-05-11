@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Image as ImageIcon, Sparkles, UserRound } from 'lucide-react'
+import { RegisterForm } from '@/components/auth/register-form'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 
@@ -31,13 +32,10 @@ export function RegisterPageOverride() {
               <Sparkles className="h-3.5 w-3.5" />
               Join the network
             </div>
-            <form className="mt-6 grid gap-4">
-              <input className="h-12 rounded-2xl border border-[rgba(93,28,106,0.1)] bg-white/78 px-4 text-sm text-[#41144b]" placeholder="Full name" />
-              <input className="h-12 rounded-2xl border border-[rgba(93,28,106,0.1)] bg-white/78 px-4 text-sm text-[#41144b]" placeholder="Email address" />
-              <input className="h-12 rounded-2xl border border-[rgba(93,28,106,0.1)] bg-white/78 px-4 text-sm text-[#41144b]" placeholder="Password" type="password" />
-              <input className="h-12 rounded-2xl border border-[rgba(93,28,106,0.1)] bg-white/78 px-4 text-sm text-[#41144b]" placeholder="What kind of work do you share?" />
-              <button type="submit" className="tabs-button h-12">Create account</button>
-            </form>
+            <RegisterForm
+              inputClassName="h-12 rounded-2xl border border-[rgba(93,28,106,0.1)] bg-white/78 px-4 text-sm text-[#41144b]"
+              buttonClassName="tabs-button h-12"
+            />
             <div className="mt-6 flex items-center justify-between text-sm text-[#704969]">
               <span>Already have an account?</span>
               <Link href="/login" className="inline-flex items-center gap-2 font-semibold hover:text-[#41144b] hover:underline">

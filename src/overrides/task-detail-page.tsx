@@ -80,10 +80,6 @@ export async function TaskDetailPageOverride({ task, slug }: { task: TaskKey; sl
                 This page keeps the original post logic intact while shifting the presentation into a more colorful, image-aware editorial frame.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/profile" className="tabs-button-soft">
-                  <UserRound className="h-4 w-4" />
-                  Open profiles
-                </Link>
                 <Link href="/image-sharing" className="tabs-button">
                   More visuals
                   <ArrowUpRight className="h-4 w-4" />

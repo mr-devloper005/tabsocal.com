@@ -15,7 +15,7 @@ import { getProductKind, type ProductKind } from '@/design/factory/get-product-k
 import type { SitePost } from '@/lib/site-connector'
 import { HOME_PAGE_OVERRIDE_ENABLED, HomePageOverride } from '@/overrides/home-page'
 
-export const revalidate = 300
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
@@ -365,9 +365,6 @@ function VisualHome({ primaryTask, imagePosts, profilePosts, articlePosts }: { p
               <Link href={primaryTask?.route || '/image-sharing'} className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold ${tone.action}`}>
                 Open gallery
                 <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/profile" className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold ${tone.actionAlt}`}>
-                Meet creators
               </Link>
             </div>
           </div>

@@ -23,7 +23,6 @@ export function FooterOverride() {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ca5995]">Main lanes</p>
           <div className="mt-4 grid gap-3 text-sm font-semibold text-[#41144b]">
             <Link href="/image-sharing" className="inline-flex items-center gap-2 hover:text-[#ca5995]"><ImageIcon className="h-4 w-4" />Image feed</Link>
-            <Link href="/articles" className="inline-flex items-center gap-2 hover:text-[#ca5995]"><Compass className="h-4 w-4" />Stories</Link>
           </div>
         </div>
 

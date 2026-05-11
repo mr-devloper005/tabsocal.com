@@ -46,7 +46,6 @@ export function NavbarOverride() {
           </div>
           <div className="hidden sm:block">
             <p className="text-sm font-semibold text-[#41144b]">{SITE_CONFIG.name}</p>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-[#ca5995]">Image + profile social canvas</p>
           </div>
         </Link>
 
